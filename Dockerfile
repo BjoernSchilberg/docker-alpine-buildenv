@@ -26,10 +26,4 @@ WORKDIR $HOME
 RUN git config --global user.name $GITUSERNAME &&\
     git config --global user.email $GITUSEREMAIL &&\
     git clone git://git.alpinelinux.org/aports &&\
-    abuild-keygen -a -n
-
-USER root
-
-RUN cp /home/$USERNAME/.abuild/*.rsa.pub /etc/apk/keys
-
-USER $USERNAME 
+    abuild-keygen -a -i
